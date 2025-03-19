@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토익 복습/암기 노트</title>
+    <style>
+        /*바디*/
+                body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; }
+                .container { display: flex; flex-direction: column; height: 100vh; }
+        /*헤더*/
+                header { display: flex; justify-content: space-between; padding: 1px; background-color: #555; color: white; }
+                header button { background-color: #777; color: white; border: #ffffff solid 1px; padding: 10px; cursor: pointer; width: 20%; font-size: 14px; margin: 2px;}
+        /*메인*/
+                main { flex-grow: 1; position: relative; overflow: hidden; padding-left: 5%; }
+                .TitleBt { padding: 10px 15px; font-size: 1em; font-weight: bold; color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); cursor: pointer; 
+                        background: linear-gradient(to bottom, #ff7e5f, #feb47b); border: #000 solid 1px; border-radius: 12px; transition: all 0.3s ease-in-out; width: 95%; margin-bottom: 5px; margin-top: 10px;}
+                .goToPageBt { background-color: #ffffff00; border-radius: 100%; width: auto; height: 50px; display: flex; align-items: center; 
+                justify-content: center; position: absolute; top: 15vh; left: 20px; z-index: 1003; border: none; font-size: 16px;}       
+                button.goToPageBt:hover { background-color: transparent; cursor: default; } 
+                .overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background-color: rgba(155, 17, 30, 1); display: none; z-index: 1005; }
+        /*팝업*/
+                .popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 350px; height: 75%; padding: 20px; 
+                        background: white; border: 1px solid #000; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); }
+                .pageNumber { position: absolute; top: 4%; left: 8%; font-size: 16px; }
+        /*푸터*/
+                footer { display: flex; justify-content: space-between; padding: 10px; background-color: #555; color: white; }
+                footer button { background-color: #777; color: white; border: none; padding: 10px; cursor: pointer; width: 20%; font-size: 1.4em; border: #ffffff solid 1px;}
+        /*레이아웃*/ 
+                .haifcontainer { flex: 1; display: flex; flex-direction: column; height: 100%; }
+                .top, .bottom { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+                        border: 1px solid #555; padding: 10px; word-wrap: break-word; white-space: normal; text-align: center; }   
+                .blankBt { border: none; color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); width: 98%; height: 14vh; align-items: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <button id="closePopupBt">🔥<br>Close<br>Popup</button>
+        <button id="ramdomPageBt">🏹<br>Random<br>Page</button>
+        <button id="toggleshow">⚡<br>Hidden<br>Pron</button>
+        <button id="overlayRemoveBt">🔱<br>Over1ay<br>Remove</button>
+        <button id="plusPageBt">🌊<br>Plus<br>Page</button>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main>
+        
+        <div class="overlay"></div>
+        
+        <button class="blankBt">공란</button>
+
+        <button class="TitleBt" data-popup="popup1">품사 구별</button>
+        <button class="TitleBt" data-popup="popup2">격</button>
+        <button class="TitleBt" data-popup="popup3">오답 노트</button>
+        <button class="TitleBt" data-popup="popup4">Part2 공식</button>
+        <button class="TitleBt" data-popup="popup5">Part2 어휘</button>
+        <button class="TitleBt" data-popup="popup6">Part5 공식</button>
+        <button class="TitleBt" data-popup="popup7">필수 어휘</button>
+
+    </main>
+
+    
+    <!-- 푸터 -->
+    <footer> 
+        <button id="prevBt"> <ruby>🗡️<rt>prev</rt></ruby> </button> 
+        <button id="toggleOverlayBt"> <ruby>🛡️<rt>over1ay</rt></ruby> </button> 
+        <button id="nextBt"> <ruby>⚔️<rt>next</rt></ruby> </button> 
+    </footer>
+
+</div>
+
+<div id="popup1" class="popup">
+        <div class="haifcontainer">
+                <div class="top">
+                <div class="pageNumber" id="popUp1PageNumber"></div>
+                <label for="title1">품사 구별</label><br>
+                <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title1" name="title1"></h2>
+                <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title2" name="title2"></h1>
+                </div>
+                <div class="bottom">
+                <p class="rtTxt"><input type="text"  placeholder="⚡" style="width: auto; text-align: center; border: none;" id="title3" name="title3"></p>
+                <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title4" name="title4"></h1>
+                <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title5" name="title5"></h2>
+                </div>
+        </div>
+</div> 
+    
+<div id="popup2" class="popup">
+        <div class="haifcontainer">
+                <div class="top">
+                <div class="pageNumber" id="popUp2PageNumber"></div>
+                <label for="title2">격</label><br>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title6" name="title6"></h2>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title7" name="title7"></h1>
+                </div>
+                <div class="bottom">
+                    <p class="rtTxt"><input type="text"  placeholder="⚡" style="width: auto; text-align: center; border: none;" id="title8" name="title8"></p>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title9" name="title9"></h1>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title10" name="title10"></h2>
+                </div>
+            </div>
+</div>
+
+<div id="popup3" class="popup">
+        <div class="haifcontainer">
+                <div class="top">
+                <div class="pageNumber" id="popUp3PageNumber"></div>
+                <label for="title3">오답 노트</label><br>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title11" name="title11"></h2>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title12" name="title12"></h1>
+                </div>
+                <div class="bottom">
+                    <p class="rtTxt"><input type="text"  placeholder="⚡" style="width: auto; text-align: center; border: none;" id="title13" name="title13"></p>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title14" name="title14"></h1>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title15" name="title15"></h2>
+                </div>
+            </div>
+</div>
+
+<div id="popup4" class="popup">
+        <div class="haifcontainer">
+                <div class="top">
+                <div class="pageNumber" id="popUp4PageNumber"></div>
+                <label for="title4">Part2 공식</label><br>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title16" name="title16"></h2>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title17" name="title17"></h1>
+                </div>
+                <div class="bottom">
+                    <p class="rtTxt"><input type="text"  placeholder="⚡" style="width: auto; text-align: center; border: none;" id="title18" name="title18"></p>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title19" name="title19"></h1>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title20" name="title20"></h2>
+                </div>
+            </div>
+</div>
+
+<div id="popup5" class="popup">
+        <div class="haifcontainer">
+                <div class="top">
+                <div class="pageNumber" id="popUp5PageNumber"></div>
+                <label for="title5">Part2 어휘</label><br>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title21" name="title21"></h2>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title22" name="title22"></h1>
+                </div>
+                <div class="bottom">
+                    <p class="rtTxt"><input type="text"  placeholder="⚡" style="width: auto; text-align: center; border: none;" id="title23" name="title23"></p>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title24" name="title24"></h1>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title25" name="title25"></h2>
+                </div>
+            </div>
+</div>
+
+<div id="popup6" class="popup">
+        <div class="haifcontainer">
+                <div class="top">
+                <div class="pageNumber" id="popUp6PageNumber"></div>
+                <label for="title6">Part5 공식</label><br>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title26" name="title26"></h2>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title27" name="title27"></h1>
+                </div>
+                <div class="bottom">
+                    <p class="rtTxt"><input type="text"  placeholder="⚡" style="width: auto; text-align: center; border: none;" id="title28" name="title28"></p>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title29" name="title29"></h1>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title30" name="title30"></h2>
+                </div>
+            </div>
+</div>
+
+<div id="popup7" class="popup">
+        <div class="haifcontainer">
+                <div class="top">
+                <div class="pageNumber" id="popUp7PageNumber"></div>
+                <label for="title7">필수 어휘</label><br>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title31" name="title31"></h2>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title32" name="title32"></h1>
+                </div>
+                <div class="bottom">
+                    <p class="rtTxt"><input type="text"  placeholder="⚡" style="width: auto; text-align: center; border: none;" id="title33" name="title33"></p>
+                    <h1><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 35px;" id="title34" name="title34"></h1>
+                    <h2><input type="text"  placeholder="⚜️" style="width: auto; text-align: center; border: none; font-size: 25px;" id="title35" name="title35"></h2>
+                </div>
+            </div>
+</div>
+
+<script>
+        let originalOrder = {}; // 원래 순서를 저장할 객체
+        let shuffledOrder = {}; // 랜덤 순서를 저장할 객체
+        let isShuffled = false; // 현재 상태 (true: 랜덤, false: 원래 순서)
+
+        // 📖 팝업별 여러 페이지 데이터 저장 구조
+        const popupData = {
+                popup1: [{ title1: "", title2: "" }],
+                popup2: [{ title1: "", title2: "" }],
+                popup3: [{ title1: "", title2: "" }],
+                popup4: [{ title1: "", title2: "" }],
+                popup5: [{ title1: "", title2: "" }],
+                popup6: [{ title1: "", title2: "" }],
+                popup7: [{ title1: "", title2: "" }]
+        };
+        
+        // 📌 현재 페이지 저장 객체
+        let currentPage = JSON.parse(localStorage.getItem("popupPages")) || {};
+        
+        // 📌 로컬 스토리지에서 데이터 불러오기
+        let savedData = JSON.parse(localStorage.getItem("popupData")) || popupData;
+        
+        // 📖 팝업 열기 & 데이터 로드
+        document.querySelectorAll('.TitleBt').forEach(button => {
+                button.addEventListener('click', () => {
+                let popupId = button.getAttribute('data-popup');
+                let popup = document.getElementById(popupId);
+                const overlay = document.querySelector('.overlay');
+        
+                if (popup) {
+                        closePopup(window.currentPopupId);
+                        window.currentPopupId = popupId;
+                        popup.style.display = 'block';
+                        overlay.style.display = 'block';
+        
+                        // 페이지 데이터 로드
+                        currentPage[popupId] = 0;  
+                        updatePopupContent(popupId);
+                    }
+                });
+        });
+        
+        // 📖 페이지 업데이트 함수 (페이지 숫자 표시 추가)
+        function updatePopupContent(popupId) {
+                let popup = document.getElementById(popupId);
+                let pageData = savedData[popupId][currentPage[popupId]];
+                let totalPages = savedData[popupId].length;
+        
+                // 기존 입력 필드 업데이트
+                popup.querySelectorAll("input").forEach(input => {
+                let key = input.id;
+                if (pageData.hasOwnProperty(key)) {
+                        input.value = pageData[key]; // 저장된 데이터 불러오기
+                }
+        
+                // 입력 변경 시 데이터 저장
+                input.oninput = () => {
+                        savedData[popupId][currentPage[popupId]][key] = input.value;
+                        localStorage.setItem("popupData", JSON.stringify(savedData));
+                };
+                });
+        
+                // 🌟 페이지 번호 표시 업데이트
+                let pageNumberDiv = popup.querySelector(".pageNumber");
+                if (pageNumberDiv) {
+                pageNumberDiv.textContent = `${currentPage[popupId] + 1} / ${totalPages}`;
+                }
+        
+                // 로컬 스토리지에 현재 페이지 저장
+                localStorage.setItem("popupPages", JSON.stringify(currentPage));
+        }
+    
+        // 📖 페이지 변경 함수
+        function changePage(popupId, direction) {
+                let totalPages = savedData[popupId].length;
+                
+                // 만약 order가 정의되지 않았다면 기본값을 설정
+                if (!originalOrder[popupId]) {
+                    originalOrder[popupId] = Array.from({ length: totalPages }, (_, i) => i);
+                }
+                if (!shuffledOrder[popupId]) {
+                    shuffledOrder[popupId] = [...originalOrder[popupId]];
+                }
+            
+                let order = isShuffled ? shuffledOrder[popupId] : originalOrder[popupId];
+            
+                // order가 유효한지 다시 확인
+                if (!order || !Array.isArray(order)) return;
+            
+                let index = order.indexOf(currentPage[popupId]);
+            
+                // 현재 페이지가 배열에 없을 경우 0으로 초기화
+                if (index === -1) {
+                    currentPage[popupId] = order[0];
+                    index = 0;
+                }
+            
+                index = Math.max(0, Math.min(totalPages - 1, index + direction));
+                currentPage[popupId] = order[index];
+                updatePopupContent(popupId);
+            }
+            
+        // 📖 팝업 닫기
+        function closePopup(popupId) {
+                if (!popupId) return; // popupId가 없으면 실행 안 함
+                let popup = document.getElementById(popupId);
+                const overlay = document.querySelector('.overlay');
+
+                if (popup) {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+                }
+                window.currentPopupId = null; // 팝업 닫으면 ID 초기화
+        }
+        
+        // 🔥 팝업 닫기 버튼
+        document.getElementById('closePopupBt').addEventListener('click', () => {
+                closePopup(window.currentPopupId);
+        });
+        
+        // 🏹 랜덤 페이지
+        const randomPageBtn = document.getElementById('ramdomPageBt');
+        randomPageBtn.addEventListener('click', function() {
+            if (!window.currentPopupId) return;
+            
+            let popupId = window.currentPopupId;
+            let totalPages = savedData[popupId].length;
+            
+            if (!originalOrder[popupId]) {
+                originalOrder[popupId] = Array.from(Array(totalPages).keys());
+            }
+        
+            isShuffled = !isShuffled; // 토글
+            
+            if (isShuffled) {
+                // 랜덤 순서로 섞기
+                shuffledOrder[popupId] = [...originalOrder[popupId]];
+                shuffledOrder[popupId].sort(() => Math.random() - 0.5);
+                currentPage[popupId] = shuffledOrder[popupId][0]; // 첫 번째 랜덤 페이지 선택
+                randomPageBtn.innerHTML = "🏹<br><span style='font-size:12px;'>Sequence</span><br>Page";
+            } else {
+                // 원래 순서로 되돌리기
+                currentPage[popupId] = 0;
+                randomPageBtn.innerHTML = "🏹<br>Random<br>Page";  
+                randomPageBtn.style.fontSize = "14px"; 
+            }
+            updatePopupContent(popupId);
+        });
+    
+        // ⚡ Show Pron
+        document.getElementById('toggleshow').addEventListener('click', function() {
+                const button = this; // 현재 버튼을 참조
+                const elements = document.querySelectorAll('.rtTxt');
+                let isHidden = Array.from(elements).every(el => el.style.display === 'none');
+        
+                elements.forEach(el => {
+                el.style.display = isHidden ? '' : 'none';
+                });
+        
+                button.innerHTML = isHidden ? "⚡<br>Hidden<br>Pron" : "⚡<br>Show<br>Pron";
+        });
+    
+        // 🔱 오버레이 지우기
+        document.getElementById('overlayRemoveBt').addEventListener('click', function() {
+                const overlay = document.querySelector('.overlay');
+                const button = this;
+                
+                if (overlay.style.backgroundColor === 'rgba(0, 0, 0, 0)') {
+                overlay.style.backgroundColor = '';  // 원래 색으로 복구
+                button.innerHTML = '🔱<br>Over1ay<br>Remove';
+                } else {
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)'; // 투명하게 설정
+                button.innerHTML = '🔱<br>Over1ay<br>insert';
+                }
+        });
+        
+        // 🌊 PlusPage
+        document.getElementById('plusPageBt').addEventListener('click', function() {
+                if (!window.currentPopupId) return; // 팝업이 열려 있지 않으면 무시
+        
+                let popupId = window.currentPopupId;
+                
+                // 새로운 페이지 데이터 추가 (모든 입력 필드를 빈 값으로 초기화)
+                let newPage = {};
+                document.querySelector(`#${popupId}`).querySelectorAll("input").forEach(input => {
+                newPage[input.id] = "";
+                });
+        
+                savedData[popupId].push(newPage);  // 새 페이지 추가
+                currentPage[popupId] = savedData[popupId].length - 1;  // 마지막 페이지로 이동
+        
+                // 저장 후 업데이트
+                localStorage.setItem("popupData", JSON.stringify(savedData));
+                localStorage.setItem("popupPages", JSON.stringify(currentPage));
+        
+                updatePopupContent(popupId); // UI 업데이트
+        });
+
+        // 🗡️ 이전 페이지 
+        document.getElementById('prevBt').addEventListener('click', function() {
+                if (window.currentPopupId) {
+                changePage(window.currentPopupId, -1);
+                }
+        });
+
+        // ⚔️ 다음 페이지
+        document.getElementById('nextBt').addEventListener('click', function() {
+                if (window.currentPopupId) {
+                changePage(window.currentPopupId, 1);
+                }
+        });
+    
+        // 🛡️ 오버레이 토글 버튼
+        document.getElementById('toggleOverlayBt').addEventListener('click', function() {
+                const overlay = document.querySelector('.overlay');
+                overlay.style.display = (overlay.style.display === 'block' || overlay.style.display === '') ? 'none' : 'block';
+        });
+        
+        // 키보드 제어
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        document.getElementById('prevBt').click();
+    } else if (event.key === 'ArrowRight') {
+        document.getElementById('nextBt').click();
+    } else if (event.key === ' ' && !event.target.matches('input, textarea')) {
+        event.preventDefault(); // 스크롤 방지
+        document.getElementById('toggleOverlayBt').click();
+        
+    }    else if (event.key === 'ArrowUp') {
+        document.getElementById('toggleshow').click();
+    } else if (event.key === 'ArrowDown') {
+        document.getElementById('overlayRemoveBt').click();
+    } else if (event.key === 'F2') {
+        document.getElementById('ramdomPageBt').click(); 
+    } else if (event.ctrlKey && event.key >= '1' && event.key <= '7') {
+        event.preventDefault(); // 브라우저 기본 동작 방지
+
+        let popupNumber = event.key;
+        let button = document.querySelector(`.TitleBt[data-popup="popup${popupNumber}"]`);
+
+        if (button) {
+            button.click(); // 버튼 클릭
+        } 
+    } else if (event.ctrlKey && event.key === 'Enter') {
+        event.preventDefault(); // 브라우저 기본 동작 방지
+        let plusButton = document.getElementById('plusPageBt');
+
+        if (plusButton) {
+            plusButton.click();
+        } 
+    } else if (event.key === 'Escape') {
+        document.getElementById('closePopupBt').click();
+    }
+});
+
+        
+     
+
+</script>
+<!--     // 정수 입력 창 생성
+        const pageInputModal = document.createElement('div');
+        pageInputModal.id = 'pageInputModal';
+        pageInputModal.style.position = 'fixed';
+        pageInputModal.style.top = '30%';
+        pageInputModal.style.left = '50%';
+        pageInputModal.style.transform = 'translate(-50%, -50%)';
+        pageInputModal.style.width = '60vw';
+        pageInputModal.style.height = '15vh';
+        pageInputModal.style.background = '#feb47b';
+        pageInputModal.style.display = 'none';
+        pageInputModal.style.justifyContent = 'center';
+        pageInputModal.style.alignItems = 'center';
+        pageInputModal.style.flexDirection = 'column';
+        pageInputModal.style.borderRadius = '0px';
+        pageInputModal.style.border = '2px solid #555';
+        pageInputModal.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+        pageInputModal.innerHTML = `
+        <input type='number' id='pageInput' style='width: 60%; height: 30%; font-size: 1.2em; border-radius: 10px;' placeholder='페이지 번호 입력'>
+        <button id='confirmPageInput' style='margin-top: 10px; padding: 10px; font-size: 1em; background-color: #555; color: #fff; border: 2px solid white;'>goToPage</button>`;
+        document.body.appendChild(pageInputModal);
+        // 모달창 외부 클릭 시 닫기
+        document.addEventListener('click', (event) => {
+                if (pageInputModal.style.display === 'flex' && !pageInputModal.contains(event.target) && !event.target.classList.contains('pageNumber')) {
+                pageInputModal.style.display = 'none';
+                }
+        });
+        // .pageNumber 클릭 시 입력창 표시
+        document.querySelectorAll('.pageNumber').forEach(pageNumber => {
+        pageNumber.addEventListener('click', () => {
+                pageInputModal.style.display = 'flex';
+        });
+        });
+        // 확인 버튼 클릭 시 페이지 이동
+        document.getElementById('confirmPageInput').addEventListener('click', () => {
+        const inputValue = parseInt(document.getElementById('pageInput').value, 10);
+        if (isNaN(inputValue)) {
+                pageInputModal.style.display = 'none';
+                return;
+        }
+
+        if (!window.currentPopupId) return;
+        const popupId = window.currentPopupId;
+        const totalPages = savedData[popupId].length;
+        
+        if (inputValue >= 1 && inputValue <= totalPages) {
+                currentPage[popupId] = inputValue - 1;
+                localStorage.setItem("popupPages", JSON.stringify(currentPage)); // 현재 페이지 저장
+                updatePopupContent(popupId);
+        }
+        
+        pageInputModal.style.display = 'none';
+        });
+        // 페이지 이동 시 항상 최신 상태 유지
+        function changePage(popupId, direction) {
+        let totalPages = savedData[popupId].length;
+        let newPage = currentPage[popupId] + direction;
+        
+        if (newPage >= 0 && newPage < totalPages) {
+                currentPage[popupId] = newPage;
+                localStorage.setItem("popupPages", JSON.stringify(currentPage));
+                updatePopupContent(popupId);
+        }
+        }  -->
+</body>
+</html>
