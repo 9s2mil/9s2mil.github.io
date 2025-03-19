@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호 보호 페이지</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #content { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="login">
+        <h2>비밀번호를 입력하세요</h2>
+        <input type="password" id="password" placeholder="비밀번호 입력">
+        <button onclick="checkPassword()">확인</button>
+    </div>
+
+    <div id="content">
+        <h1>환영합니다!</h1>
+        <p>이제 내용을 볼 수 있습니다.</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const input = document.getElementById("password").value;
+            const correctPassword = "1234"; // 🔥 비밀번호 설정 (변경 가능)
+            
+            if (input === correctPassword) {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("비밀번호가 틀렸습니다!");
+            }
+        }
+    </script>
+
+</body>
+</html>
