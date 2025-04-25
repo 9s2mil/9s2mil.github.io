@@ -1,0 +1,4 @@
+
+body { font-family: Arial, sans-serif; text-align: center; }
+#customAlert { display: none; position: fixed; top: 30%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; font-size: 18px;
+               background-color: #f44336; color: white; padding: 20px 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }

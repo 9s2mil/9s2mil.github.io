@@ -3,31 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비밀번호 보호 페이지</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-    </style>
+    <title>인덱스 페이지</title>
+    <link rel="stylesheet" href="/%암기복습노트/source/indexcss.css">
 </head>
 <body>
 
-    <div id="login">
-        <h2>비밀번호를 입력하세요</h2>
-        <input type="password" id="password" placeholder="비밀번호 입력">
-        <button onclick="checkPassword()">확인</button>
-    </div>
+<div id="login">
+    <h2>비밀번호를 입력하세요</h2>
+    <input type="password" id="password" placeholder="비밀번호 입력">
+    <button onclick="checkPassword()">확인</button>
 
-    <script>
-        function checkPassword() {
-            const input = document.getElementById("password").value;
-            const correctPassword = "1234"; // 🔥 비밀번호 설정 (변경 가능)
-
-            if (input === correctPassword) {
-                window.location.href = "to.html"; // 🔥 'to.html'로 즉시 이동
-            } else {
-                alert("비밀번호가 틀렸습니다!");
-            }
-        }
-    </script>
+    <div id="customAlert">비밀번호가 틀렸습니다</div>
+</div>
+<script src="/%암기복습노트/source/indexjs.js"></script>
 
 </body>
 </html>
+
