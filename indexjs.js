@@ -3,13 +3,13 @@ function checkPassword() {
 
     switch (input) {
         case "1234":
-            window.location.href = "/%암기복습노트/source/Study.html";
+            window.location.href = "Study.html";
             break;
         case "5678":
-            window.location.href = "/%암기복습노트/source/to.html"; 
+            window.location.href = "to.html"; 
             break;
         case "abcd":
-            window.location.href = "/%암기복습노트/source/next.html";
+            window.location.href = "next.html";
             break;
         default:
             showCustomAlert("비밀번호가 틀렸습니다");
