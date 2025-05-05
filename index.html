@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인덱스 페이지</title>
+    <title>강세민</title>
     <link rel="stylesheet" href="indexcss.css">
 </head>
 <body>
-
-<div id="login">
-    <h2>비밀번호를 입력하세요</h2>
-    <input type="password" id="password" placeholder="비밀번호 입력">
-    <button onclick="checkPassword()">확인</button>
-
-    <div id="customAlert">비밀번호가 틀렸습니다</div>
+<header><h3>반복 복습 노트 | 로그인</h3></header>
+<div id="login" class="login">
+    <br><h2>로그인</h2>
+    <input class="textinput" type="textinput" placeholder="아이디 입력">
+    <br><input class="textinput" type="password" id="password" placeholder="비밀번호 입력">
+    <br><button class="loginBt" onclick="checkPassword()">로그인</button>
 </div>
+<div id="customAlert">비밀번호가 틀렸습니다</div>
 <script src="indexjs.js"></script>
 
 </body>

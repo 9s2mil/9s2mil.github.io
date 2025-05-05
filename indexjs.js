@@ -6,10 +6,10 @@ function checkPassword() {
             window.location.href = "Study.html";
             break;
         case "5678":
-            window.location.href = "to.html"; 
+            window.location.href = "sto.html"; 
             break;
         case "abcd":
-            window.location.href = "next.html";
+            window.location.href = "plan.html";
             break;
         default:
             showCustomAlert("비밀번호가 틀렸습니다");

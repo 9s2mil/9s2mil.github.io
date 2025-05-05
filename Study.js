@@ -369,6 +369,7 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+// 전체화면 (작성중)
 window.addEventListener('load', () => {
     setTimeout(() => {
       window.scrollTo(0, 1);

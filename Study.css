@@ -212,4 +212,6 @@ rt {
 .pointText {
     color: #e69901;
 }
-
+.hidetext {
+    color: #ffffff00;
+}
