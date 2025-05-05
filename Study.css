@@ -202,6 +202,7 @@ footer {
 /*2*/
 rt {
     color: #e69901;
+    visibility: hidden;
 }
 .mainText {
     color: rgb(194, 174, 150);
