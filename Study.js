@@ -213,9 +213,11 @@ function curtainHidden() {
 //⚡발음 보이기/가리기
 function rtHidden() {
     const rtElements = document.querySelectorAll('rt');
-    
+
     rtElements.forEach(function(rt) {
-        if (rt.style.visibility === 'hidden' || rt.style.visibility === '') {
+        const currentVisibility = window.getComputedStyle(rt).visibility;
+
+        if (currentVisibility === 'hidden') {
             rt.style.visibility = 'visible';
         } else {
             rt.style.visibility = 'hidden';
