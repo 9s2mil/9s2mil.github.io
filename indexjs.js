@@ -2,14 +2,20 @@ function checkPassword() {
     const input = document.getElementById("password").value;
 
     switch (input) {
-        case "1234":
-            window.location.href = "Study.html";
+        case "0001":
+            window.location.href = "Study0.html";
             break;
-        case "5678":
-            window.location.href = "sto.html"; 
+        case "0002":
+            window.location.href = "Study1.html"; 
             break;
-        case "abcd":
-            window.location.href = "plan.html";
+        case "0003":
+            window.location.href = "Study2.html";
+            break;
+        case "0004":
+            window.location.href = "Study3.html";
+            break;
+        case "0005":
+            window.location.href = "Study4.html";
             break;
         default:
             showCustomAlert("비밀번호가 틀렸습니다");

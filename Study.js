@@ -2,6 +2,9 @@ let randomMode = false;
 let randomSequence = [];
 let randomIndex = 0;
 let randomPlayInterval = null;
+let autoLoopEnabled = false;
+let autoLoopDelaySec = null;
+let autoLoopTimeout = null;
 
 //⚔️메인 주제열기
 function openPopup(num) {
@@ -9,7 +12,7 @@ function openPopup(num) {
         document.getElementById(`title${num}-1`).style.display = "block";
         curtain.style.display = "block"; 
         updateGoToPopupButtonLabel();
-
+        openFullscreen()
 }
 function title1Open() { openPopup(1); }
 function title2Open() { openPopup(2); }
@@ -94,7 +97,7 @@ function moveToSpecificPopup() {
         }
     });
 
-    // 입력값이 없을 경우 -> 1번 팝업으로 이동
+    // ⛳1. 입력값이 없을 경우 -> 1번 팝업으로 이동
     if (valueRaw === "") {
         const newPopup = document.getElementById(`title${x}-1`);
         if (newPopup) {
@@ -105,13 +108,12 @@ function moveToSpecificPopup() {
             closeGoToPopup();
             input.value = "";
 
-            // 금색 번쩍임
             triggerGoldFlash(newPopup);
         }
         return;
     }
 
-    // 입력값이 유효 범위 내일 경우
+    // ⛳2. 입력값이 유효 범위 내일 경우
     if (value >= 1 && value <= maxY) {
         const newPopup = document.getElementById(`title${x}-${value}`);
         if (newPopup) {
@@ -122,9 +124,45 @@ function moveToSpecificPopup() {
             closeGoToPopup();
             input.value = "";
 
-            // 금색 번쩍임
             triggerGoldFlash(newPopup);
         }
+    }
+
+    // ⛳3. 입력값이 #숫자 형식 (#1 ~ #10)일 경우 자동 실행 예약
+    if (/^#\d+$/.test(valueRaw)) {
+        const delaySec = parseInt(valueRaw.slice(1), 10);
+        if (delaySec >= 1 && delaySec <= 10) {
+            autoLoopDelaySec = delaySec;
+            autoLoopEnabled = true;
+
+            clearTimeout(autoLoopTimeout);
+
+            function runAutoLoop() {
+                if (!autoLoopEnabled) return;
+
+                document.getElementById("curtainUpDownButton").click();
+
+                setTimeout(() => {
+                    document.getElementById("nextPopupButton").click();
+
+                    autoLoopTimeout = setTimeout(runAutoLoop, autoLoopDelaySec * 1000);
+                }, 1000);
+            }
+
+            runAutoLoop(); 
+            closeGoToPopup();
+            input.value = "";
+            return;
+        }
+    }
+
+    // ⛳4. 입력값이 #만 들어올 경우 => 오토 기능 정지
+    if (valueRaw === "#") {
+        autoLoopEnabled = false;
+        clearTimeout(autoLoopTimeout);
+        closeGoToPopup();
+        input.value = "";
+        return;
     }
 }
 //🌊페이지 이동 후 애니메이션
@@ -132,7 +170,7 @@ function triggerGoldFlash(element) {
     element.classList.add("gold-flash");
     setTimeout(() => {
         element.classList.remove("gold-flash");
-    }, 700); // 애니메이션 끝난 후 제거
+    }, 700); 
 }
 //🌪️랜덤플레이/정상화
 function randomPopupOpen() {
@@ -217,13 +255,16 @@ function rtHidden() {
     rtElements.forEach(function(rt) {
         const currentVisibility = window.getComputedStyle(rt).visibility;
 
+        // 순서 변경: 안 보이면 보이게, 아니면 숨김
         if (currentVisibility === 'hidden') {
             rt.style.visibility = 'visible';
         } else {
             rt.style.visibility = 'hidden';
         }
     });
+    openFullscreen()
 }
+
 //🔥팝업닫기
 function closePopup() {
     const popups = document.querySelectorAll('.popup');
@@ -338,7 +379,7 @@ document.addEventListener("keydown", function (event) {
         document.getElementById("prevPopupButton").click();
     } else if (event.key === "ArrowRight") {// 오른쪽 방향키: 다음 페이지⚔️
         document.getElementById("nextPopupButton").click();
-    }  else if (event.key === "Shift") {// 스페이스 바: 휘장 보이기/가리기🛡️
+    }  else if (event.key === "Control") {// 스페이스 바: 휘장 보이기/가리기🛡️
         document.getElementById("curtainUpDownButton").click();
     } 
     //헤더 버튼 제어
@@ -365,17 +406,60 @@ document.addEventListener("keydown", function (event) {
         }
     }
     //메인 버튼 제어
-    else if (event.ctrlKey && event.key >= 1 && event.key <= 8) { // ctrlKey + Number: 메인 팝업 열기⚔️
-        const num = event.key;
-        window[`title${num}Open`]();
+    else if (event.shiftKey && event.code.startsWith("Digit")) { // shiftKey + Number: 메인 팝업 열기⚔️
+        const num = event.code.replace("Digit", "");
+
+        if (["1", "2", "3", "4", "5", "6", "7", "8"].includes(num)) {
+            window[`title${num}Open`]();
+        }
     }
 });
 
-// 전체화면 (작성중)
-window.addEventListener('load', () => {
-    setTimeout(() => {
-      window.scrollTo(0, 1);
-    }, 100);
+// 전체화면
+function openFullscreen() {
+    const minHeightForFullscreen = 800;
+
+    if (window.innerWidth < window.innerHeight && window.innerHeight <= minHeightForFullscreen) {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen();
+        }
+    }
+}
+
+// 한자 음 별색
+document.querySelectorAll('.particularText').forEach(elem => {
+  const lines = elem.innerHTML.split('<br>');
+  const newLines = lines.map(line => {
+    line = line.trim();
+    if (line.includes('/')) {
+      const slashIndex = line.indexOf('/');
+      // 슬래시 앞글자, 슬래시 뒤글자
+      const beforeChar = line.charAt(slashIndex - 1);
+      const afterChar = line.charAt(slashIndex + 1);
+
+      // 슬래시 앞글자와 뒤글자를 제외한 나머지 텍스트 분리
+      const beforeText = line.slice(0, slashIndex - 1);
+      const afterText = line.slice(slashIndex + 2);
+
+      // 조합: beforeText + 강조된 앞글자 + '/' + 강조된 뒷글자 + afterText
+      return beforeText +
+             `<span class="highlight">${beforeChar}</span>` +
+             '/' +
+             `<span class="highlight">${afterChar}</span>` +
+             afterText;
+    } else {
+      // 슬래시 없는 줄: 마지막 글자 강조
+      if (line.length === 0) return '';
+      const lastChar = line.slice(-1);
+      const rest = line.slice(0, -1);
+      return rest + `<span class="highlight">${lastChar}</span>`;
+    }
   });
-  
-  
+  elem.innerHTML = newLines.join('<br>');
+});

@@ -203,6 +203,7 @@ footer {
 rt {
     color: #e69901;
     visibility: hidden;
+    margin-top: 8px;
 }
 .mainText {
     color: rgb(194, 174, 150);
@@ -215,4 +216,21 @@ rt {
 }
 .hidetext {
     color: #ffffff00;
+}
+.HanjaText {
+    font-family: 'Noto Serif KR', serif;
+    color: #e69901;
+    font-size: 7.5em; 
+    font-weight: 100; 
+    margin: -5vh 0;
+}  
+
+.particularText {
+    color: #f4cfb3;
+    white-space: pre-line; 
+}
+
+.particularText .highlight {
+    color: #fcbf97;
+    font-size: 115%; 
 }
