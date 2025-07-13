@@ -463,3 +463,32 @@ document.querySelectorAll('.particularText').forEach(elem => {
   });
   elem.innerHTML = newLines.join('<br>');
 });
+
+
+
+  window.addEventListener("load", function() {
+  fetch("data/hanjaData.json")
+    .then(res => res.json())
+    .then(data => {
+      data.forEach(entry => {
+        const popup = document.createElement("div");
+        popup.className = "popup";
+        popup.id = entry.id;
+
+        popup.innerHTML = `
+          <div class="top">
+            <div class="inner">
+              <h6 class="mainText">${entry.notes}</h6>
+              <p class="HanjaText">${entry.hanja}</p>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="inner">
+              <h1 class="particularText">${entry.eumhun}</h1>
+            </div>
+          </div>
+        `;
+        document.getElementById("popupContainer1").appendChild(popup);
+      });
+    });
+});
