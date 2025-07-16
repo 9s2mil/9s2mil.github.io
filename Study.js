@@ -5,6 +5,7 @@ let randomPlayInterval = null;
 let autoLoopEnabled = false;
 let autoLoopDelaySec = null;
 let autoLoopTimeout = null;
+let isPaused = false;
 
 //⚔️메인 주제열기
 function openPopup(num) {
@@ -76,7 +77,6 @@ function updateGoToPopupButtonLabel() {
 function moveToSpecificPopup() {
     const input = document.getElementById("popupMoveInput");
     const valueRaw = input.value.trim();
-    const value = parseInt(valueRaw, 10);
 
     // 현재 열린 팝업 찾기
     const currentPopup = document.querySelector(".popup[style*='display: block']");
@@ -97,23 +97,37 @@ function moveToSpecificPopup() {
         }
     });
 
-    // ⛳1. 입력값이 없을 경우 -> 1번 팝업으로 이동
-    if (valueRaw === "") {
-        const newPopup = document.getElementById(`title${x}-1`);
-        if (newPopup) {
-            currentPopup.style.display = "none";
-            newPopup.style.display = "block";
+    // 앞에 0이 붙은 경우 → 자동 루프 시작
+    if (/^0\d+$/.test(valueRaw)) {
+        const delaySec = parseInt(valueRaw, 10); // 앞자리 0은 제거됨
+        autoLoopDelaySec = delaySec;
+        autoLoopEnabled = true;
 
-            updateGoToPopupButtonLabel();
-            closeGoToPopup();
-            input.value = "";
+        clearTimeout(autoLoopTimeout);
 
-            triggerGoldFlash(newPopup);
+        // 💡 두 버튼을 표시
+        document.querySelector(".pauseLoopButton").style.display = "block";
+        document.querySelector(".stopLoopButton").style.display = "block";
+
+        function runAutoLoop() {
+            if (!autoLoopEnabled) return;
+
+            document.querySelector("#curtainUpDownButton").click();
+
+            setTimeout(() => {
+                document.querySelector("#nextPopupButton").click();
+                autoLoopTimeout = setTimeout(runAutoLoop, autoLoopDelaySec * 1000);
+            }, 1000);
         }
+
+        runAutoLoop();
+        closeGoToPopup();
+        input.value = "";
         return;
     }
 
-    // ⛳2. 입력값이 유효 범위 내일 경우
+    // 일반 정수 입력 → 해당 팝업으로 이동
+    const value = parseInt(valueRaw, 10);
     if (value >= 1 && value <= maxY) {
         const newPopup = document.getElementById(`title${x}-${value}`);
         if (newPopup) {
@@ -128,43 +142,9 @@ function moveToSpecificPopup() {
         }
     }
 
-    // ⛳3. 입력값이 #숫자 형식 (#1 ~ #10)일 경우 자동 실행 예약
-    if (/^#\d+$/.test(valueRaw)) {
-        const delaySec = parseInt(valueRaw.slice(1), 10);
-        if (delaySec >= 1 && delaySec <= 10) {
-            autoLoopDelaySec = delaySec;
-            autoLoopEnabled = true;
-
-            clearTimeout(autoLoopTimeout);
-
-            function runAutoLoop() {
-                if (!autoLoopEnabled) return;
-
-                document.getElementById("curtainUpDownButton").click();
-
-                setTimeout(() => {
-                    document.getElementById("nextPopupButton").click();
-
-                    autoLoopTimeout = setTimeout(runAutoLoop, autoLoopDelaySec * 1000);
-                }, 1000);
-            }
-
-            runAutoLoop(); 
-            closeGoToPopup();
-            input.value = "";
-            return;
-        }
-    }
-
-    // ⛳4. 입력값이 #만 들어올 경우 => 오토 기능 정지
-    if (valueRaw === "#") {
-        autoLoopEnabled = false;
-        clearTimeout(autoLoopTimeout);
-        closeGoToPopup();
-        input.value = "";
-        return;
-    }
+    // 기타 입력은 무시 (예: 0, maxY 초과 등)
 }
+
 //🌊페이지 이동 후 애니메이션
 function triggerGoldFlash(element) {
     element.classList.add("gold-flash");
@@ -267,15 +247,38 @@ function rtHidden() {
 
 //🔥팝업닫기
 function closePopup() {
+    // 기존 팝업 전부 닫기
     const popups = document.querySelectorAll('.popup');
     popups.forEach(function(popup) {
         popup.style.display = 'none';
     });
-    var curtain = document.querySelector('.curtain'); 
-        curtain.style.display = "none"; 
-        updateGoToPopupButtonLabel();
 
+    // 커튼 숨기기
+    const curtain = document.querySelector('.curtain');
+    curtain.style.display = "none";
+
+    // 페이지 이동 버튼 갱신
+    updateGoToPopupButtonLabel();
+
+    // 🌪️ 랜덤모드 종료 처리
+    if (randomMode) {
+        randomMode = false;
+        randomSequence = [];
+        randomIndex = 0;
+    }
+
+    // 🔁 자동루프 종료 + 버튼 숨김
+    if (autoLoopEnabled) {
+        autoLoopEnabled = false;
+        clearTimeout(autoLoopTimeout);
+        isPaused = false;
+
+        // 버튼 숨김
+        document.querySelector(".pauseLoopButton").style.display = "none";
+        document.querySelector(".stopLoopButton").style.display = "none";
+    }
 }
+
 
 //푸터 버튼
 //🗡️이전 팝업 열기
@@ -464,31 +467,36 @@ document.querySelectorAll('.particularText').forEach(elem => {
   elem.innerHTML = newLines.join('<br>');
 });
 
+// 정지 버튼 클릭 시: 루프 일시 정지 + 재개
+document.querySelector(".pauseLoopButton").addEventListener("click", () => {
+    isPaused = !isPaused;
 
+    if (isPaused) {
+        autoLoopEnabled = false;
+        clearTimeout(autoLoopTimeout);
+    } else {
+        autoLoopEnabled = true;
 
-  window.addEventListener("load", function() {
-  fetch("data/hanjaData.json")
-    .then(res => res.json())
-    .then(data => {
-      data.forEach(entry => {
-        const popup = document.createElement("div");
-        popup.className = "popup";
-        popup.id = entry.id;
+        function runAutoLoop() {
+            if (!autoLoopEnabled) return;
 
-        popup.innerHTML = `
-          <div class="top">
-            <div class="inner">
-              <h6 class="mainText">${entry.notes}</h6>
-              <p class="HanjaText">${entry.hanja}</p>
-            </div>
-          </div>
-          <div class="bottom">
-            <div class="inner">
-              <h1 class="particularText">${entry.eumhun}</h1>
-            </div>
-          </div>
-        `;
-        document.getElementById("popupContainer1").appendChild(popup);
-      });
-    });
+            document.querySelector("#curtainUpDownButton").click();
+
+            setTimeout(() => {
+                document.querySelector("#nextPopupButton").click();
+                autoLoopTimeout = setTimeout(runAutoLoop, autoLoopDelaySec * 1000);
+            }, 1000);
+        }
+        runAutoLoop();
+    }
+});
+
+// 중지 버튼 클릭 시: 루프 완전 정지 + 버튼 숨김
+document.querySelector(".stopLoopButton").addEventListener("click", () => {
+    autoLoopEnabled = false;
+    clearTimeout(autoLoopTimeout);
+
+    // 버튼 숨김 처리
+    document.querySelector(".pauseLoopButton").style.display = "none";
+    document.querySelector(".stopLoopButton").style.display = "none";
 });

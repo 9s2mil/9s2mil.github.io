@@ -234,3 +234,21 @@ rt {
     color: #fcbf97;
     font-size: 115%; 
 }
+.pauseLoopButton, .stopLoopButton {
+    z-index: 1010;
+    display: none;
+    position: fixed;
+    bottom: 6vh;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: #111 solid 3px;
+    background-color: #d4af37;
+    font-size: 1.3em;
+} 
+.pauseLoopButton {
+    left: 35%;
+} 
+.stopLoopButton {
+    right: 35%;
+} 

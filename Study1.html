@@ -62,17 +62,748 @@
   <div class="curtain"></div>
 
   <div id="goToPopup" class="goToPopup">
-      <input type="text" id="popupMoveInput" placeholder="1" />
+      <input type="number" id="popupMoveInput" placeholder="1" />
       <div class="equalityButton">
           <button id="moveToSpecificPopupButton" onclick="moveToSpecificPopup()">이동</button>
           <button id="closeGoToPopupButton" onclick="closeGoToPopup()">닫기</button>
       </div>
   </div>
+
+
+
+
+  <button class="pauseLoopButton">💫</button>
+  <button class="stopLoopButton">🌠</button>
+
 </main>
 <div><!--4. 팝업-->
 
-  <!--1. 한자의 기초이론-->
-  <div id="popupContainer1"></div>
+  <div><!--1. 한자의 기초이론-->
+    <div class="popup" id="title1-1">
+    <div class="top"><div class="inner"><h5 class="mainText">부수의 위치에 따른 명칭</h5><h2>상, 하, 좌, 우<br>좌하단, 좌상단,<br>테두리, 제부수</h2></div></div>
+    <div class="bottom"><div class="inner"><h1 class="middleText">머리, 발, 변, 방,<br>받침, 엄,<br>몸, 제부수</h1></div></div></div>
+      <div><!--1획부수-->
+    <div class="popup" id="title1-2">
+    <div class="top"><div class="inner"><h6 class="mainText">1획 부수(002~007)</h6><p class="HanjaText">一</p><h6>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">한 일</h1></div></div></div>
+    <div class="popup" id="title1-3">
+    <div class="top"><div class="inner"><h6 class="mainText">1획 부수(002~007)</h6><p class="HanjaText">丨</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">뚫을 곤</h1></div></div></div>
+    <div class="popup" id="title1-4">
+    <div class="top"><div class="inner"><h6 class="mainText">1획 부수(002~007)</h6><p class="HanjaText">丶</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">점 주</h1></div></div></div>
+    <div class="popup" id="title1-5">
+    <div class="top"><div class="inner"><h6 class="mainText">1획 부수(002~007)</h6><p class="HanjaText"> 丿</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">삐침 별</h1></div></div></div>
+    <div class="popup" id="title1-6">
+    <div class="top"><div class="inner"><h6 class="mainText">1획 부수(002~007)</h6><p class="HanjaText">乙</p><h6>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<br>갑을병정</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">새 을</h1></div></div></div>
+    <div class="popup" id="title1-7">
+    <div class="top"><div class="inner"><h6 class="mainText">1획 부수(002~007)</h6><p class="HanjaText">亅</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">갈고리 궐</h1></div></div></div>
+      </div>
+      <div><!--2획부수-->
+    <div class="popup" id="title1-8">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">二</p><h6>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">두 이</h1></div></div></div>
+    <div class="popup" id="title1-9">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">亠</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">돼지해머리</h1></div></div></div>
+    <div class="popup" id="title1-10">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">人(<span style="margin-right: -43px;">亻</span>)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">사람 인(변)</h1></div></div></div>
+    <div class="popup" id="title1-11">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">儿</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">어진사람인발</h1></div></div></div>
+    <div class="popup" id="title1-12">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">入</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">들 입</h1></div></div></div>
+    <div class="popup" id="title1-13">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">八</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">여덟 팔</h1></div></div></div>
+    <div class="popup" id="title1-14">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">冂</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">멀경몸</h1></div></div></div>
+    <div class="popup" id="title1-15">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">冖</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">민갓머리</h1></div></div></div>
+    <div class="popup" id="title1-16">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">冫</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">이수변(얼음 빙)</h1></div></div></div>
+    <div class="popup" id="title1-17">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">几</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">안석 궤</h1></div></div></div>
+    <div class="popup" id="title1-18">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">凵</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">위튼입구몸</h1></div></div></div>
+    <div class="popup" id="title1-19">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">刀(<span style="margin-left: -43px;">刂</span>)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">칼 도(방)</h1></div></div></div>
+    <div class="popup" id="title1-20">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">力</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">힘 력</h1></div></div></div>
+    <div class="popup" id="title1-21">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">勹</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">쌀포몸</h1></div></div></div>
+    <div class="popup" id="title1-22">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">匕</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">비수 비</h1></div></div></div>
+    <div class="popup" id="title1-23">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">匚</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">터진입구몸</h1></div></div></div>
+    <div class="popup" id="title1-24">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">匸</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">감출혜몸</h1></div></div></div>
+    <div class="popup" id="title1-25">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">十</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">열 십</h1></div></div></div>
+    <div class="popup" id="title1-26">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">卜</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">점 복</h1></div></div></div>
+    <div class="popup" id="title1-27">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">卩(㔾)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">병부절</h1></div></div></div>
+    <div class="popup" id="title1-28">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">厂</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">민엄호</h1></div></div></div>
+    <div class="popup" id="title1-29">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">厶</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">마늘 모</h1></div></div></div>
+    <div class="popup" id="title1-30">
+    <div class="top"><div class="inner"><h6 class="mainText">2획 부수(008~030)</h6><p class="HanjaText">又</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">또 우</h1></div></div></div>
+      </div>
+      <div><!--3획부수-->
+    <div class="popup" id="title1-31">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">口</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">입 구</h1></div></div></div>
+    <div class="popup" id="title1-32">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">囗</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">큰입구몸</h1></div></div></div>
+    <div class="popup" id="title1-33">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">土</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">흙 토</h1></div></div></div>
+    <div class="popup" id="title1-34">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">士</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">선비 사</h1></div></div></div>
+    <div class="popup" id="title1-35">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">夂</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">뒤져올 치</h1></div></div></div>
+    <div class="popup" id="title1-36">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">夊</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">천천히걸을쇠발</h1></div></div></div>
+    <div class="popup" id="title1-37">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">夕</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">저녁 석</h1></div></div></div>
+    <div class="popup" id="title1-38">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">大</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">큰 대</h1></div></div></div>
+    <div class="popup" id="title1-39">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">女</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">계집 녀</h1></div></div></div>
+    <div class="popup" id="title1-40">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">子</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">아들 자</h1></div></div></div>
+    <div class="popup" id="title1-41">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">宀</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">갓머리</h1></div></div></div>
+    <div class="popup" id="title1-42">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">寸</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">마디 촌</h1></div></div></div>
+    <div class="popup" id="title1-43">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">小</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">작을 소</h1></div></div></div>
+    <div class="popup" id="title1-44">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">尢</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">절름발이 왕</h1></div></div></div>
+    <div class="popup" id="title1-45">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">尸</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">주검시엄</h1></div></div></div>
+    <div class="popup" id="title1-46">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">屮</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">왼손 좌</h1></div></div></div>
+    <div class="popup" id="title1-47">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">山</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">메 산</h1></div></div></div>
+    <div class="popup" id="title1-48">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">巛(川)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">개미허리(내 천)</h1></div></div></div>
+    <div class="popup" id="title1-49">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">工</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">장인 공</h1></div></div></div>
+    <div class="popup" id="title1-50">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">己</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">몸 기</h1></div></div></div>
+    <div class="popup" id="title1-51">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">巾</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">수건 건</h1></div></div></div>
+    <div class="popup" id="title1-52">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">干</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">방패 간</h1></div></div></div>
+    <div class="popup" id="title1-53">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">幺</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">작을 요</h1></div></div></div>
+    <div class="popup" id="title1-54">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">广</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">엄호</h1></div></div></div>
+    <div class="popup" id="title1-55">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">廴</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">민책받침</h1></div></div></div>
+    <div class="popup" id="title1-56">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">廾</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">스물입발</h1></div></div></div>
+    <div class="popup" id="title1-57">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">弋</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">주살 익</h1></div></div></div>
+    <div class="popup" id="title1-58">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">弓</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">활 궁</h1></div></div></div>
+    <div class="popup" id="title1-59">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">彑(彐)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">튼가로왈</h1></div></div></div>
+    <div class="popup" id="title1-60">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">彡</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">터럭 삼</h1></div></div></div>
+    <div class="popup" id="title1-61">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">彳</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">두인변</h1></div></div></div>
+    <div class="popup" id="title1-62">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">  忄</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">심방변</h1></div></div></div>
+    <div class="popup" id="title1-63">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText"> 氵</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">삼수변</h1></div></div></div>
+    <div class="popup" id="title1-64">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">犭</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">개사슴록변</h1></div></div></div>
+    <div class="popup" id="title1-65">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">  阝</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">우부방</h1></div></div></div>
+    <div class="popup" id="title1-66">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">  阝</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">좌부변</h1></div></div></div>
+    <div class="popup" id="title1-67">
+    <div class="top"><div class="inner"><h6 class="mainText">3획 부수(031~067)</h6><p class="HanjaText">  扌</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">재방변</h1></div></div></div>
+      </div>
+      <div><!--4획부수-->
+    <div class="popup" id="title1-68">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">心(⺗)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">마음 심(발)</h1></div></div></div>
+    <div class="popup" id="title1-69">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">戈</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">창 과</h1></div></div></div>
+    <div class="popup" id="title1-70">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">戶</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">지게 호</h1></div></div></div>
+    <div class="popup" id="title1-71">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">手</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">손 수</h1></div></div></div>
+    <div class="popup" id="title1-72">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">支</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">지탱할 지</h1></div></div></div>
+    <div class="popup" id="title1-73">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">攵(攴)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">등글월문(칠 복)</h1></div></div></div>
+    <div class="popup" id="title1-74">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">文</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">글월 문</h1></div></div></div>
+    <div class="popup" id="title1-75">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">斗</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">말 두</h1></div></div></div>
+    <div class="popup" id="title1-76">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">斤</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">도끼 근</h1></div></div></div>
+    <div class="popup" id="title1-77">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">方</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">모 방</h1></div></div></div>
+    <div class="popup" id="title1-78">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">无(旡)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">이미기방</h1></div></div></div>
+    <div class="popup" id="title1-79">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">日</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">날 일</h1></div></div></div>
+    <div class="popup" id="title1-80">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">曰</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">가로 왈</h1></div></div></div>
+    <div class="popup" id="title1-81">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">月</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">달 월, 육달월</h1></div></div></div>
+    <div class="popup" id="title1-82">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">木</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">나무 목</h1></div></div></div>
+    <div class="popup" id="title1-83">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">欠</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">하품 흠</h1></div></div></div>
+    <div class="popup" id="title1-84">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">止</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">그칠 지</h1></div></div></div>
+    <div class="popup" id="title1-85">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">歹(歺)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">죽을사변</h1></div></div></div>
+    <div class="popup" id="title1-86">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">殳</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">갖을등글월문</h1></div></div></div>
+    <div class="popup" id="title1-87">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">毋</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">말 무</h1></div></div></div>
+    <div class="popup" id="title1-88">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">比</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">견줄 비</h1></div></div></div>
+    <div class="popup" id="title1-89">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">毛</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">터럭 모</h1></div></div></div>
+    <div class="popup" id="title1-90">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">氏</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">성씨 씨</h1></div></div></div>
+    <div class="popup" id="title1-91">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">气</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">기운기엄</h1></div></div></div>
+    <div class="popup" id="title1-92">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">水</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">물 수</h1></div></div></div>
+    <div class="popup" id="title1-93">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">火(灬)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">불 화(연화발)</h1></div></div></div>
+    <div class="popup" id="title1-94">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">爪(爫)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">손톱 조</h1></div></div></div>
+    <div class="popup" id="title1-95">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">父</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">아비 부</h1></div></div></div>
+    <div class="popup" id="title1-96">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">爻</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">점괘 효</h1></div></div></div>
+    <div class="popup" id="title1-97">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">爿</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">장수장변</h1></div></div></div>
+    <div class="popup" id="title1-98">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">片</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">조각 편</h1></div></div></div>
+    <div class="popup" id="title1-99">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">牙</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">어금니 아</h1></div></div></div>
+    <div class="popup" id="title1-100">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">牛(牜)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">소 우</h1></div></div></div>
+    <div class="popup" id="title1-101">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">犬</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">개 견</h1></div></div></div>
+    <div class="popup" id="title1-102">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">⺩</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">구슬옥변</h1></div></div></div>
+    <div class="popup" id="title1-103">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">⺭</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">보일시변</h1></div></div></div>
+    <div class="popup" id="title1-104">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">耂</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">늙을로엄</h1></div></div></div>
+    <div class="popup" id="title1-105">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">艹</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">초두머리</h1></div></div></div>
+    <div class="popup" id="title1-106">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">辶</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">책받침</h1></div></div></div>
+    <div class="popup" id="title1-107">
+    <div class="top"><div class="inner"><h6 class="mainText">4획 부수(068~107)</h6><p class="HanjaText">⺳</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">그물망</h1></div></div></div>
+      </div>
+      <div><!--5획부수-->
+    <div class="popup" id="title1-108">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">玄</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">검을 현</h1></div></div></div>
+    <div class="popup" id="title1-109">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">玉</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">구슬 옥</h1></div></div></div>
+    <div class="popup" id="title1-110">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">瓜</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">오이 과</h1></div></div></div>
+    <div class="popup" id="title1-111">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">瓦</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">기와 와</h1></div></div></div>
+    <div class="popup" id="title1-112">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">甘</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">달 감</h1></div></div></div>
+    <div class="popup" id="title1-113">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">生</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">날 생</h1></div></div></div>
+    <div class="popup" id="title1-114">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">用</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">쓸 용</h1></div></div></div>
+    <div class="popup" id="title1-115">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">田</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">밭 전</h1></div></div></div>
+    <div class="popup" id="title1-116">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">疋</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">짝 필</h1></div></div></div>
+    <div class="popup" id="title1-117">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">疒</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">병질엄</h1></div></div></div>
+    <div class="popup" id="title1-118">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">癶</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">필발머리</h1></div></div></div>
+    <div class="popup" id="title1-119">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">白</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">흰 백</h1></div></div></div>
+    <div class="popup" id="title1-120">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">皮</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">가죽 피</h1></div></div></div>
+    <div class="popup" id="title1-121">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">皿</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">그릇 명</h1></div></div></div>
+    <div class="popup" id="title1-122">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">目</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">눈 목</h1></div></div></div>
+    <div class="popup" id="title1-123">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">矛</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">창 모</h1></div></div></div>
+    <div class="popup" id="title1-124">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">矢</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">화살 시</h1></div></div></div>
+    <div class="popup" id="title1-125">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">石</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">돌 석</h1></div></div></div>
+    <div class="popup" id="title1-126">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">示</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">보일 시</h1></div></div></div>
+    <div class="popup" id="title1-127">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">禸</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">발자국 유</h1></div></div></div>
+    <div class="popup" id="title1-128">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">禾</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">벼 화</h1></div></div></div>
+    <div class="popup" id="title1-129">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">穴</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">구멍 혈</h1></div></div></div>
+    <div class="popup" id="title1-130">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">立</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">설 립</h1></div></div></div>
+    <div class="popup" id="title1-131">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">罒</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">그물망머리</h1></div></div></div>
+    <div class="popup" id="title1-132">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText"> 衤</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">옷의변</h1></div></div></div>
+    <div class="popup" id="title1-133">
+    <div class="top"><div class="inner"><h6 class="mainText">5획 부수(108~133)</h6><p class="HanjaText">氺</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">아래물수</h1></div></div></div>
+      </div>
+      <div><!--6획부수-->
+            <div class="popup" id="title1-134">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">竹</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">대 죽</h1></div></div></div>
+    <div class="popup" id="title1-135">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">米</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">쌀 미</h1></div></div></div>
+    <div class="popup" id="title1-136">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">糸</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">실 사</h1></div></div></div>
+    <div class="popup" id="title1-137">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">缶</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">장군 부</h1></div></div></div>
+    <div class="popup" id="title1-138">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">网</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">그물 망</h1></div></div></div>
+    <div class="popup" id="title1-139">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">羊</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">양 양</h1></div></div></div>
+    <div class="popup" id="title1-140">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">羽</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">깃 우</h1></div></div></div>
+    <div class="popup" id="title1-141">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">老</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">늙을 로</h1></div></div></div>
+    <div class="popup" id="title1-142">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">而</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">말 이을 이</h1></div></div></div>
+    <div class="popup" id="title1-143">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">耒</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">가래 뢰</h1></div></div></div>
+    <div class="popup" id="title1-144">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">耳</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">귀 이</h1></div></div></div>
+    <div class="popup" id="title1-145">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">聿</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">붓 율</h1></div></div></div>
+    <div class="popup" id="title1-146">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">肉</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">고기 육</h1></div></div></div>
+    <div class="popup" id="title1-147">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">臣</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">신하 신</h1></div></div></div>
+    <div class="popup" id="title1-148">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">自</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">스스로 자</h1></div></div></div>
+    <div class="popup" id="title1-149">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">至</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">이를 지</h1></div></div></div>
+    <div class="popup" id="title1-150">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">臼</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">절구 구</h1></div></div></div>
+    <div class="popup" id="title1-151">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">舌</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">혀 설</h1></div></div></div>
+    <div class="popup" id="title1-152">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">舛</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">어그러질 천</h1></div></div></div>
+    <div class="popup" id="title1-153">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">舟</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">배 주</h1></div></div></div>
+    <div class="popup" id="title1-154">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">艮</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">괘 이름 간</h1></div></div></div>
+    <div class="popup" id="title1-155">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">色</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">빛 색</h1></div></div></div>
+    <div class="popup" id="title1-156">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">艸</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">풀 초</h1></div></div></div>
+    <div class="popup" id="title1-157">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">虍</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">범호엄</h1></div></div></div>
+    <div class="popup" id="title1-158">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">虫</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">벌레 충/훼</h1></div></div></div>
+    <div class="popup" id="title1-159">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">血</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">피 혈</h1></div></div></div>
+    <div class="popup" id="title1-160">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">行</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">다닐 행</h1></div></div></div>
+    <div class="popup" id="title1-161">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">衣</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">옷 의</h1></div></div></div>
+    <div class="popup" id="title1-162">
+    <div class="top"><div class="inner"><h6 class="mainText">6획부수(134~162)</h6><p class="HanjaText">襾</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">덮을 아</h1></div></div></div>
+      </div>
+      <div><!--7획부수-->
+    <div class="popup" id="title1-163">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">見</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">볼 견</h1></div></div></div>
+    <div class="popup" id="title1-164">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">角</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">뿔 각</h1></div></div></div>
+    <div class="popup" id="title1-165">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">言</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">말씀 언</h1></div></div></div>
+    <div class="popup" id="title1-166">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">谷</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">골 곡</h1></div></div></div>
+    <div class="popup" id="title1-167">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">豆</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">콩 두</h1></div></div></div>
+    <div class="popup" id="title1-168">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">豕</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">돼지 시</h1></div></div></div>
+    <div class="popup" id="title1-169">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">豸</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">갖은돼지시변</h1></div></div></div>
+    <div class="popup" id="title1-170">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">貝</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">조개 패</h1></div></div></div>
+    <div class="popup" id="title1-171">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">赤</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">붉을 적</h1></div></div></div>
+    <div class="popup" id="title1-172">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">走</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">달릴 주</h1></div></div></div>
+    <div class="popup" id="title1-173">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">足</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">발 족</h1></div></div></div>
+    <div class="popup" id="title1-174">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">身</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">몸 신</h1></div></div></div>
+    <div class="popup" id="title1-175">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">車</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">수레 거/차</h1></div></div></div>
+    <div class="popup" id="title1-176">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">辛</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">매울 신</h1></div></div></div>
+    <div class="popup" id="title1-177">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">辰</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">별 진</h1></div></div></div>
+    <div class="popup" id="title1-178">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">辵</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">쉬엄쉬엄 갈 착</h1></div></div></div>
+    <div class="popup" id="title1-179">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">邑</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">고을 읍</h1></div></div></div>
+    <div class="popup" id="title1-180">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">酉</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">닭 유</h1></div></div></div>
+    <div class="popup" id="title1-181">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">釆</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">분별할 변</h1></div></div></div>
+    <div class="popup" id="title1-182">
+    <div class="top"><div class="inner"><h6 class="mainText">7획부수(163~182)</h6><p class="HanjaText">里</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">마을 리</h1></div></div></div>
+      </div>
+      <div><!--8획부수-->
+    <div class="popup" id="title1-183">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">金</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">쇠 금</h1></div></div></div>
+    <div class="popup" id="title1-184">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">長</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">길 장</h1></div></div></div>
+    <div class="popup" id="title1-185">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">門</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">문 문</h1></div></div></div>
+    <div class="popup" id="title1-186">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">阜</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">언덕 부</h1></div></div></div>
+    <div class="popup" id="title1-187">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">隶</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">미칠 이</h1></div></div></div>
+    <div class="popup" id="title1-188">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">隹</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">새 추</h1></div></div></div>
+    <div class="popup" id="title1-189">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">雨</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">비 우</h1></div></div></div>
+    <div class="popup" id="title1-190">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">靑</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">푸를 청</h1></div></div></div>
+    <div class="popup" id="title1-191">
+    <div class="top"><div class="inner"><h6 class="mainText">8획부수(183~191)</h6><p class="HanjaText">非</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">아닐 비</h1></div></div></div>
+      </div>
+      <div><!--9획부수-->
+    <div class="popup" id="title1-192">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">面</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">낯 면</h1></div></div></div>
+    <div class="popup" id="title1-193">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">革</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">가죽 혁</h1></div></div></div>
+    <div class="popup" id="title1-194">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">韋</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">가죽 위</h1></div></div></div>
+    <div class="popup" id="title1-195">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">韭</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">부추 구</h1></div></div></div>
+    <div class="popup" id="title1-196">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">音</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">소리 음</h1></div></div></div>
+    <div class="popup" id="title1-197">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">頁</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">머리 혈</h1></div></div></div>
+    <div class="popup" id="title1-198">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">風</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">바람 풍</h1></div></div></div>
+    <div class="popup" id="title1-199">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">飛</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">날 비</h1></div></div></div>
+    <div class="popup" id="title1-200">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">食(<span style="margin-right: -43px;">飠</span>)</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">밥 식(변)</h1></div></div></div>
+    <div class="popup" id="title1-201">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">首</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">머리 수</h1></div></div></div>
+    <div class="popup" id="title1-202">
+    <div class="top"><div class="inner"><h6 class="mainText">9획부수(192~202)</h6><p class="HanjaText">香</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">향기 향</h1></div></div></div>
+      </div>
+      <div><!--10획부수-->
+    <div class="popup" id="title1-203">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">馬</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">말 마</h1></div></div></div>
+    <div class="popup" id="title1-204">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">骨</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">뼈 골</h1></div></div></div>
+    <div class="popup" id="title1-205">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">高</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">높을 고</h1></div></div></div>
+    <div class="popup" id="title1-206">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">髟</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">터럭 발</h1></div></div></div>
+    <div class="popup" id="title1-207">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">鬥</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">싸울 투</h1></div></div></div>
+    <div class="popup" id="title1-208">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">鬯</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">울창주 창</h1></div></div></div>
+    <div class="popup" id="title1-209">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">鬲</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">솥 력</h1></div></div></div>
+    <div class="popup" id="title1-210">
+    <div class="top"><div class="inner"><h6 class="mainText">10획부수(203~210)</h6><p class="HanjaText">鬼</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">귀신 귀</h1></div></div></div>
+      </div>
+      <div><!--11획부수-->
+    <div class="popup" id="title1-211">
+    <div class="top"><div class="inner"><h6 class="mainText">11획부수(211~216)</h6><p class="HanjaText">魚</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">물고기 어</h1></div></div></div>
+    <div class="popup" id="title1-212">
+    <div class="top"><div class="inner"><h6 class="mainText">11획부수(211~216)</h6><p class="HanjaText">鳥</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">새 조</h1></div></div></div>
+    <div class="popup" id="title1-213">
+    <div class="top"><div class="inner"><h6 class="mainText">11획부수(211~216)</h6><p class="HanjaText">鹵</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">소금밭 로</h1></div></div></div>
+    <div class="popup" id="title1-214">
+    <div class="top"><div class="inner"><h6 class="mainText">11획부수(211~216)</h6><p class="HanjaText">鹿</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">사슴 록</h1></div></div></div>
+    <div class="popup" id="title1-215">
+    <div class="top"><div class="inner"><h6 class="mainText">11획부수(211~216)</h6><p class="HanjaText">麥</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">보리 맥</h1></div></div></div>
+    <div class="popup" id="title1-216">
+    <div class="top"><div class="inner"><h6 class="mainText">11획부수(211~216)</h6><p class="HanjaText">麻</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">삼 마</h1></div></div></div>
+      </div>
+      <div><!--12획부수-->
+    <div class="popup" id="title1-217">
+    <div class="top"><div class="inner"><h6 class="mainText">12획부수(217~220)</h6><p class="HanjaText">黃</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">누를 황</h1></div></div></div>
+    <div class="popup" id="title1-218">
+    <div class="top"><div class="inner"><h6 class="mainText">12획부수(217~220)</h6><p class="HanjaText">黍</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">기장 서</h1></div></div></div>
+    <div class="popup" id="title1-219">
+    <div class="top"><div class="inner"><h6 class="mainText">12획부수(217~220)</h6><p class="HanjaText">黑</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">검을 흑</h1></div></div></div>
+    <div class="popup" id="title1-220">
+    <div class="top"><div class="inner"><h6 class="mainText">12획부수(217~220)</h6><p class="HanjaText">黹</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">바느질할 치</h1></div></div></div>
+      </div>
+      <div><!--13획부수-->
+    <div class="popup" id="title1-221">
+    <div class="top"><div class="inner"><h6 class="mainText">13획부수(221~224)</h6><p class="HanjaText">黽</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">맹꽁이 맹</h1></div></div></div>
+    <div class="popup" id="title1-222">
+    <div class="top"><div class="inner"><h6 class="mainText">13획부수(221~224)</h6><p class="HanjaText">鼎</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">솥 정</h1></div></div></div>
+    <div class="popup" id="title1-223">
+    <div class="top"><div class="inner"><h6 class="mainText">13획부수(221~224)</h6><p class="HanjaText">鼓</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">북 고</h1></div></div></div>
+    <div class="popup" id="title1-224">
+    <div class="top"><div class="inner"><h6 class="mainText">13획부수(221~224)</h6><p class="HanjaText">鼠</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">쥐 서</h1></div></div></div>
+      </div>
+      <div><!--14획부수-->
+    <div class="popup" id="title1-225">
+    <div class="top"><div class="inner"><h6 class="mainText">14획부수(225~226)</h6><p class="HanjaText">鼻</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">코 비</h1></div></div></div>
+    <div class="popup" id="title1-226">
+    <div class="top"><div class="inner"><h6 class="mainText">14획부수(225~226)</h6><p class="HanjaText">齊</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">가지런할 제</h1></div></div></div>
+      </div>
+      <div><!--15획부수-->
+    <div class="popup" id="title1-227">
+    <div class="top"><div class="inner"><h6 class="mainText">15획부수(227)</h6><p class="HanjaText">齒</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">이 치</h1></div></div></div>
+      </div>
+      <div><!--16획부수-->
+    <div class="popup" id="title1-228">
+    <div class="top"><div class="inner"><h6 class="mainText">16획부수(228~229)</h6><p class="HanjaText">龍</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">용 룡</h1></div></div></div>
+    <div class="popup" id="title1-229">
+    <div class="top"><div class="inner"><h6 class="mainText">16획부수(228~229)</h6><p class="HanjaText">龜</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">거북 귀</h1></div></div></div>
+      </div>
+      <div><!--17획부수-->
+    <div class="popup" id="title1-230">
+    <div class="top"><div class="inner"><h6 class="mainText">17획부수(230)</h6><p class="HanjaText">龠</p><h6 class="hidetext">.</h6></div></div>
+    <div class="bottom"><div class="inner"><h1 class="particularText">피리 약</h1></div></div></div>
+      </div>
+  </div>
 
   <div><!--2. 3~9급 배정한자-->
       <div><!--5~9급 배정한자-->
