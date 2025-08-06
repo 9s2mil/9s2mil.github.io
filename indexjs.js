@@ -15,6 +15,9 @@ function checkPassword() {
             window.location.href = "Study3.html";
             break;
         case "0005":
+            window.location.href = "Study4.html";
+            break;
+        case "0006":
             window.location.href = "pwa.html";
             break;
         default:
@@ -27,7 +30,6 @@ function showCustomAlert(message) {
     const alertBox = document.getElementById("customAlert");
     alertBox.textContent = message;
     alertBox.style.display = "block";
-
     setTimeout(() => {
         alertBox.style.display = "none";
     }, 1000); 
@@ -35,7 +37,6 @@ function showCustomAlert(message) {
 
 document.getElementById("password").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        checkPassword(); // 로그인 버튼 클릭 기능 수행
+        checkPassword();
     }
 });
-
