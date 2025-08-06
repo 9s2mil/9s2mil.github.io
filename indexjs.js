@@ -15,7 +15,7 @@ function checkPassword() {
             window.location.href = "Study3.html";
             break;
         case "0005":
-            window.location.href = "Study4.html";
+            window.location.href = "pwa.html";
             break;
         default:
             showCustomAlert("비밀번호가 틀렸습니다");
@@ -38,3 +38,4 @@ document.getElementById("password").addEventListener("keydown", function(event) 
         checkPassword(); // 로그인 버튼 클릭 기능 수행
     }
 });
+
