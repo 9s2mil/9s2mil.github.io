@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PWA 뼈대</title>
+  <link rel="stylesheet" href="pwa.css">
+  <title>PWA 연습</title>
 
   <!-- PWA 필수 -->
   <link rel="manifest" href="manifest.json">
@@ -16,9 +17,43 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
-  <header>대충 현재시간 캐릭터 정보</header>
-  <main>hello, world!하단 팝업</main>
-  <footer>하단 팝업버튼</footer>
+  <header>
+    <div></div>
+    <div></div>
+  </header>
+  <main>hello, world!</main>
+
+  <div class="popup" id="popup1">
+    <div class="popup-content">
+      <h2>일일 과제</h2>
+    </div>
+  </div>
+
+  <div class="popup" id="popup2">
+    <div class="popup-content">
+      <h2>습관</h2>
+    </div>
+  </div>
+
+  <div class="popup" id="popup3">
+    <div class="popup-content">
+      <h2>목표</h2>
+    </div>
+  </div>
+
+  <div class="popup" id="popup4">
+    <div class="popup-content">
+      <h2>보상</h2>
+    </div>
+  </div>
+
+<footer>
+  <button data-popup="popup1">✅<br><span class="smft">일일 과제</span></button>
+  <button data-popup="popup2">🌱<br><span class="smft">습관</span></button>
+  <button data-popup="popup3">🏆<br><span class="smft">목표</span></button>
+  <button data-popup="popup4">🎁<br><span class="smft">보상</span></button>
+</footer>
+
 
   <script>
     if ('serviceWorker' in navigator) {
@@ -26,7 +61,6 @@
         .then(() => console.log('Service Worker Registered'));
     }
   </script>
+  <script src="pwa.js"></script>
 </body>
 </html>
-
-
