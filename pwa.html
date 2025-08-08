@@ -6,15 +6,6 @@
   <link rel="stylesheet" href="pwa.css">
   <title>PWA 연습</title>
 
-  <!-- PWA 필수 -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icons/icon-192.png">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- iOS PWA 대응 -->
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
   <header>
@@ -53,14 +44,6 @@
   <button data-popup="popup3">🏆<br><span class="smft">목표</span></button>
   <button data-popup="popup4">🎁<br><span class="smft">보상</span></button>
 </footer>
-
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('Service Worker Registered'));
-    }
-  </script>
   <script src="pwa.js"></script>
 </body>
 </html>

@@ -13,7 +13,6 @@ function openPopup(num) {
         document.getElementById(`title${num}-1`).style.display = "block";
         curtain.style.display = "block"; 
         updateGoToPopupButtonLabel();
-        openFullscreen()
 }
 function title1Open() { openPopup(1); }
 function title2Open() { openPopup(2); }
@@ -242,7 +241,6 @@ function rtHidden() {
             rt.style.visibility = 'hidden';
         }
     });
-    openFullscreen()
 }
 
 //🔥팝업닫기
@@ -417,23 +415,6 @@ document.addEventListener("keydown", function (event) {
         }
     }
 });
-
-// 전체화면
-function openFullscreen() {
-    const minHeightForFullscreen = 800;
-
-    if (window.innerWidth < window.innerHeight && window.innerHeight <= minHeightForFullscreen) {
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) {
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) {
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) {
-            document.documentElement.msRequestFullscreen();
-        }
-    }
-}
 
 // 한자 음 별색
 document.querySelectorAll('.particularText').forEach(elem => {

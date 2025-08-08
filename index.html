@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강세민</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-192.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="stylesheet" href="indexcss.css">
 </head>
 <body>
@@ -16,7 +22,12 @@
 </div>
 <div id="customAlert">비밀번호가 틀렸습니다</div>
 <script src="indexjs.js"></script>
-
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(() => console.log('Service Worker Registered'));
+    }
+</script>
 </body>
 </html>
 
