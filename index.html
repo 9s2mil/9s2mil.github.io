@@ -11,6 +11,47 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="stylesheet" href="indexcss.css">
+    <style>
+        #iosA2hsTip {
+            position: fixed;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            z-index: 9999;
+            display: none;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(6px);
+            font-size: 14px;
+            line-height: 1.4;
+        }
+    
+        #iosA2hsTip .row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        #iosA2hsTip .msg {
+            flex: 1
+        }
+    
+        #iosA2hsTip .actions {
+            display: flex;
+            gap: 8px
+        }
+    
+        #iosA2hsTip button {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 6px 10px;
+            background: #fff;
+            cursor: pointer
+        }
+    </style>
 </head>
 <body>
 <header><h3>반복 복습 노트 | 로그인</h3></header>
@@ -23,7 +64,50 @@
 </div>
 
 <div id="customAlert">비밀번호가 틀렸습니다</div>
+
+<div id="iosA2hsTip" role="dialog" aria-live="polite">
+    <div class="row">
+        <div class="msg">공유 버튼 → <b>홈 화면에 추가</b>로 설치하세요.</div>
+        <div class="actions">
+            <button id="iosA2hsClose" type="button">닫기</button>
+            <button id="iosA2hsHide" type="button">다시 보지 않기</button>
+        </div>
+    </div>
+</div>
+
 <script src="indexjs.js"></script>
+<script>
+    (function () {
+        const KEY = 'hideIosA2hsTip_v1';
+
+        // iPadOS(데스크톱 UA) 탐지 보완
+        const isIPadOS = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+        const ua = navigator.userAgent || '';
+        const isIOS = /iP(hone|od|ad)/.test(ua) || isIPadOS;
+
+        // iOS용 Safari만 허용(CriOS/FxiOS/EdgiOS 제외)
+        const isSafari = isIOS && /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS/.test(ua);
+
+        // 이미 앱으로 실행 중이면 숨김
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+        function showTip() {
+            const tip = document.getElementById('iosA2hsTip');
+            if (!tip) return;
+            tip.style.display = 'block';
+            document.getElementById('iosA2hsClose')?.addEventListener('click', () => tip.style.display = 'none');
+            document.getElementById('iosA2hsHide')?.addEventListener('click', () => {
+                localStorage.setItem(KEY, '1');
+                tip.style.display = 'none';
+            });
+        }
+
+        if (isSafari && !isStandalone && !localStorage.getItem(KEY)) {
+            // 약간 늦게 표시(레이아웃 안정화 후)
+            window.requestAnimationFrame(() => setTimeout(showTip, 300));
+        }
+    })();
+</script>
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
