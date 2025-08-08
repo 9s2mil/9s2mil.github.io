@@ -18,7 +18,7 @@ function checkPassword() {
             window.location.href = "Study4.html";
             break;
         case "0006":
-            window.location.href = "pwa.html";
+            window.location.href = "plan.html";
             break;
         default:
             showCustomAlert("비밀번호가 틀렸습니다");
@@ -40,3 +40,20 @@ document.getElementById("password").addEventListener("keydown", function(event) 
         checkPassword();
     }
 });
+
+async function hardRefresh() {
+    try {
+        if ('caches' in window) {
+            const keys = await caches.keys();
+            await Promise.all(keys.map(k => caches.delete(k)));
+        }
+        if ('serviceWorker' in navigator) {
+            const regs = await navigator.serviceWorker.getRegistrations();
+            await Promise.all(regs.map(r => r.unregister()));
+        }
+    } finally {
+        window.location.reload();
+    }
+}
+
+document.getElementById('hardReloadBtn')?.addEventListener('click', hardRefresh);
